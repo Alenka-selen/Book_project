@@ -31,7 +31,7 @@ def add_book():
                 print(f"Ошибка: книга '{title}' автора '{author}' уже Записаны в базе!")
                 return False
                 break
-    book={'id':len(books), 'author': author, 'title': title, 'score': score, 'date': date}
+    book={'author': author, 'title': title, 'score': score, 'date': date}
     books.append(book)
     try:
         with open('books.json', 'w', encoding='utf-8') as file:
