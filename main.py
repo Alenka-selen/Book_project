@@ -44,3 +44,5 @@ def main():
             stats()
         elif choice == '5':
             delete()
+if __name__ == "__main__":
+    main()
