@@ -25,6 +25,12 @@ def add_book():
     date=input("Введите дату прочтения книги: ").strip()
     while not date:
         date = input("Введите дату прочтения книги: ").strip()
+    if books:
+        for i in books:
+            if i['author']==author and i['title']==title:
+                print(f"Ошибка: книга '{title}' автора '{author}' уже Записаны в базе!")
+                return False
+                break
     book={'author': author, 'title': title, 'score': score, 'date': date}
     books.append(book)
     try:
@@ -32,3 +38,4 @@ def add_book():
             json.dump(books, file, ensure_ascii=False, indent=4)
     except IOError as e:
         print(f"Ошибка при сохранении в файл books.json: {e}")
+    return True
