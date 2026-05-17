@@ -20,8 +20,8 @@ def add_book():
     while not title:
         title = input("Введите название книги: ").strip()
     score=input("Введите оценку книги: ").strip()
-    while not score:
-        score = input("Введите оценку книги: ").strip()
+    while not score or not (1<=score<=5):
+        score = input("Введите оценку книги От 1 до 5: ").strip()
     date=input("Введите дату прочтения книги: ").strip()
     while not date:
         date = input("Введите дату прочтения книги: ").strip()
