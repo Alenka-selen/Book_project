@@ -50,3 +50,5 @@ def main():
         elif choice == '0':
             print("\nВыход из программы. До свидания!")
             break
+if __name__ == "__main__":
+    main()
