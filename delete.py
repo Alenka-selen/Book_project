@@ -2,7 +2,7 @@ import json
 import os
 
 def delete():
-    if os.path.exists('books.json'):
+        if os.path.exists('books.json'):
         try:
             with open('books.json', 'r', encoding='utf-8') as file:
                 books = json.load(file)

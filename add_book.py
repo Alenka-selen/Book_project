@@ -19,9 +19,9 @@ def add_book():
     title = input("Введите название книги: ").strip()
     while not title:
         title = input("Введите название книги: ").strip()
-    score=input("Введите оценку книги: ").strip()
+    score=int(input("Введите оценку книги: "))
     while not score or not (1<=score<=5):
-        score = input("Введите оценку книги От 1 до 5: ").strip()
+        score = int(input("Введите оценку книги От 1 до 5: "))
     date=input("Введите дату прочтения книги: ").strip()
     while not date:
         date = input("Введите дату прочтения книги: ").strip()
@@ -29,8 +29,8 @@ def add_book():
         for i in books:
             if i['author']==author and i['title']==title:
                 print(f"Ошибка: книга '{title}' автора '{author}' уже Записаны в базе!")
-                return False
-                break
+                return
+                
     book={'author': author, 'title': title, 'score': score, 'date': date}
     books.append(book)
     try:
@@ -38,4 +38,4 @@ def add_book():
             json.dump(books, file, ensure_ascii=False, indent=4)
     except IOError as e:
         print(f"Ошибка при сохранении в файл books.json: {e}")
-    return True
+    return
