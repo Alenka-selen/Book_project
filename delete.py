@@ -29,4 +29,5 @@ def delete():
             del books[book]
             break
     print('Книга успешно удалена!')
+    save_books(books)
 
