@@ -18,7 +18,6 @@ def show():
     print('Список книг: ')
     for book in books:
         print('-'*40)
-        print(f'Книга номер {book["id"]}')
         print(f'Автор: {book["author"]}')
         print(f'Название: {book["title"]}')
         print(f'Оценка: {book["score"]}')
