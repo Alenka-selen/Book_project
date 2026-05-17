@@ -23,30 +23,26 @@ def main():
         print("\n" + "="*60)
         print("       МЕНЕДЖЕР КНИГ")
         print("="*60)
-        print("1. Показать все книги")
-        print("2. Добавить книгу")
-        print("3. Удалить книгу")
-        print("4. Найти книгу")
-        print("5. Сохранить изменения")
-        print("0. Выход")
+        print("1. Добавить книгу")
+        print("2. Показать список книг")
+        print("3. Рассчитать среднюю оценку книг")
+        print("4. Вывести статистику авторов")
+        print("5. Удалить книгу")
         print("-"*60)
 
-        choice = input("Выберите действие (0–5): ").strip()
-
-        if choice == '1':
-            pass
-            # показать все книги
-        elif choice == '2':
-            pass
-            # добавить книгу
-        elif choice == '3':
-            pass
-            # удалить книгу
-        elif choice == '4':
-            pass
-            # найти книгу
-        elif choice == '5':
-            save_books(books)
-        elif choice == '0':
-            print("\nВыход из программы. До свидания!")
+        choice = input("Выберите действие (1–5), enter для выхода: ").strip()
+        if not choice:
+            print("\nВыход из программы.")
             break
+        if choice == '1':
+            add_book()
+        elif choice == '2':
+            show()
+        elif choice == '3':
+            middle_score()
+        elif choice == '4':
+            stats()
+        elif choice == '5':
+            delete()
+if __name__ == "__main__":
+    main()
